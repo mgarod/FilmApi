@@ -17,14 +17,14 @@ class FilmApi(Resource):
                 .first_or_404(description=f"Could not find film_id: {film_id}")
         )
 
-    @jwt_required
+    # @jwt_required
     def put(self, film_id):
         ''' Update a film already in the database '''
         args = parser.parse_args()
         film = FilmRecord.query.filter_by(id=film_id) \
                 .first_or_404(description=f"Could not find film_id: {film_id}")
-        film.title = args.title
-        film.director = args.director
+        film.title = args.title if args.title else film.title
+        film.director = args.director if args.director else film.director
         db.session.commit()
         return f'Updated {film}', 200
 
