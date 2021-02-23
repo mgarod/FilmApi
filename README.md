@@ -5,7 +5,9 @@ I was able utilize the `Flask-RESTful` package, `Flask-SQLAlchemy` and SQlite fo
 
 Functions surrounding the Film portion of the database is more or less fully realized. The portions regarding sign up and login are functional although enforcement is mostly disabled. The enforcment was commented out (`@jwt_required`) because I did not want to have to log in while running the unit tests. This is something I would address in the future.
 
-### Database
+### Setup
+Create a virtual environment and install libraries with `pip install -r requirements`
+
 Prior to running the API, please run `python init_db.py` to create and enter dummy data into the database
 
 Below are the included database tables and their schemas:
@@ -29,7 +31,7 @@ CREATE TABLE user_record (
 ```
 
 ### API
-Run with `ENV_FILE_LOCATION=.env python app.py `
+Run with `ENV_FILE_LOCATION=.env python app.py`
 
 /api/v1/film
 - GET: List of all films in the database (2 per page)
