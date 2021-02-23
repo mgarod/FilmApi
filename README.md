@@ -23,6 +23,6 @@ Test coverage is incomplete. There are currently no tests for anything related t
 
 
 ### Other Issues
-The .env files would not be included in this or any project as they contain secrets and exclusion would be enforced by the `.gitignore` file. For the purpose of simplicity they are added here and removed from the `.gitignore` file.
+The .env files in this project should not be included in the repository because they contain secrets. Exclusion would normally be enforced by the `.gitignore` file. For the purpose of simplicity in this project, they are added here and removed from the `.gitignore` file.
 
 There is very little manual handling for bad calls, bad data, incomplete calls, etc. Since I intended this to be a toy project, this was not my focus. However, the libraries used in this project do cover a fair deal. For example, `RequestParser` has some type enforcement for request data, and I did utilize `first_or_404` with `SQLAlchemy`.
