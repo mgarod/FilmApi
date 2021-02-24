@@ -30,6 +30,13 @@ CREATE TABLE user_record (
 );
 ```
 
+### Dockerfile
+Build with `docker build -t film-api .`
+
+Run with `docker run -d --rm -p 5000:5000 8642c4c15d99`
+
+I have not worked with docker-compose unfortunately, only with kubernetes.
+
 ### API
 Run with `ENV_FILE_LOCATION=.env python app.py`
 
@@ -73,7 +80,6 @@ Database calls are not mocked. The test class will set up a real DB called `test
 Database initialization happens in `setUp` which likely should be done with `setUpClass` to only run `init_db()` once per class, not every `test_*` method.
 
 Test coverage is incomplete. There are currently no tests for anything related to Users, login, authentication nor authorization.
-
 
 ### Other Issues
 The .env files in this project should not be included in the repository because they contain secrets. Exclusion would normally be enforced by the `.gitignore` file. For the purpose of simplicity in this project, they are added here and removed from the `.gitignore` file.

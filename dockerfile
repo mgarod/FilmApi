@@ -8,4 +8,5 @@ RUN pip install -r requirements.txt
 
 ENV ENV_FILE_LOCATION=.env
 RUN python init_db.py
+
 ENTRYPOINT /bin/bash -c "python app.py"
