@@ -82,6 +82,8 @@ Database initialization happens in `setUp` which likely should be done with `set
 Test coverage is incomplete. There are currently no tests for anything related to Users, login, authentication nor authorization.
 
 ### Other Issues
+Project structure is fragile. There were many pain points related to importing that needed to be addressed.
+
 The .env files in this project should not be included in the repository because they contain secrets. Exclusion would normally be enforced by the `.gitignore` file. For the purpose of simplicity in this project, they are added here and removed from the `.gitignore` file.
 
 The included  signup and login functionality is no doubt insecure. Something more robust should be implemented.
